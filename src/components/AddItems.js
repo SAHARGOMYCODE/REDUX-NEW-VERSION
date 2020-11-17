@@ -1,36 +1,44 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import { add_Task } from "../JS/Actions/actionTask";
-
+import { Card, Form, InputGroup, Button } from "react-bootstrap";
+import { addTask } from "../Actions/actionTask";
 const AddItems = () => {
   const [myinput, setMyinput] = useState("");
   const dispatch = useDispatch();
+
   const add = (e) => {
     e.preventDefault();
     if (myinput) {
-      dispatch(add_Task({ text: myinput, id: Math.random(), isDone: false }));
+      dispatch(addTask({ text: myinput, id: Math.random, isDone: false }));
       setMyinput("");
     } else {
       alert("noooo");
     }
   };
   return (
-    <div>
-      <h1> TO-DO-APP</h1>
-      <Form onSubmit={add}>
-        <Form.Group>
-          <Form.Control
+    <Card bg="primary">
+      <Card.Body>
+        <h1 className={"text-white"}>To-Do-App!</h1>
+        <Form onSubmit={add}>
+          <Form.Group
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
             onChange={(e) => setMyinput(e.target.value)}
             value={myinput}
           />
-          <Button variant="primary" onClick={add}>
-            +
-          </Button>{" "}
-        </Form.Group>
-      </Form>
-    </div>
+
+          <InputGroup.Append>
+            <button variant="sucess" onClick={add}>
+              +
+            </button>
+            {""}
+          </InputGroup.Append>
+        </Form>
+        <button variant="infos" className="mr-3">
+          isDone
+        </button>
+      </Card.Body>
+    </Card>
   );
 };
 

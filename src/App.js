@@ -1,11 +1,12 @@
-import React from "react";
 import "./App.css";
-import AddItems from "./components/AddItems";
+import React from "react";
+
+import AddItems from "./components/Additems";
 import ListItems from "./components/ListItems";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <AddItems />
       <ListItems />
     </div>
