@@ -13,7 +13,7 @@ function ListTodo() {
   return (
     <div style={{ margin: "2% 20%" }}>
       <ButtonToggle color="primary" onClick={() => setAll(!all)}>
-        {all ? "All" : "done"}
+        {all ? "ALL" : "done"}
       </ButtonToggle>
       {all
         ? Items.map((el) => (
@@ -32,7 +32,7 @@ function ListTodo() {
                   onClick={() => dispatch(checkItem(el.id))}
                   className={el.done ? "done" : null}
                 >
-                  {el.done ? "Done" : "Undo"}
+                  {el.done ? "Done" : "NOT DONE"}
                 </Button>
                 <Button
                   outline
