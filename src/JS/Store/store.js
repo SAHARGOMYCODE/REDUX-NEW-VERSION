@@ -1,7 +1,7 @@
+// createStore
 import { createStore } from "redux";
-import { reducerTask } from "../Reducers/reducerTask";
-
+import rootReducer from "../Reducers/index";
 export const store = createStore(
-  reducerTask,
+  rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );

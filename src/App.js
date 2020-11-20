@@ -1,14 +1,16 @@
-import "./App.css";
 import React from "react";
-
-import AddItems from "./components/Additems";
-import ListItems from "./components/ListItems";
+import "./App.css";
+import AddTodo from "./Components/AddToDo/AddTodo";
+import ListTodo from "./Components/ListTodo/ListTodo";
 
 function App() {
   return (
     <div className="App">
-      <AddItems />
-      <ListItems />
+      <h1>Todo Application </h1>
+      <br />
+
+      <AddTodo />
+      <ListTodo />
     </div>
   );
 }
